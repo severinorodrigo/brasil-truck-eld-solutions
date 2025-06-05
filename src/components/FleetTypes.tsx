@@ -8,19 +8,19 @@ const FleetTypes = () => {
       title: "Heavy Duty",
       description: "Caminhões pesados para transporte de longa distância",
       types: ["Reefer (Refrigerados)", "Dry Van (Carga Seca)", "Step Bed (Plataforma)"],
-      image: "🚛"
+      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     },
     {
       title: "Light/Medium Duty",
       description: "Veículos para transporte especializado de carros",
       types: ["Car Hauling", "Transport Trailers", "Auto Carriers"],
-      image: "🚐"
+      image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80"
     },
     {
       title: "Box Trucks",
       description: "Caminhões menores para carga seca e entregas",
       types: ["Carga Seca Local", "Delivery Services", "Moving Trucks"],
-      image: "📦"
+      image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
     }
   ];
 
@@ -42,9 +42,15 @@ const FleetTypes = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {fleetTypes.map((fleet, index) => (
-            <Card key={index} className="border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg">
+            <Card key={index} className="border-2 border-gray-100 hover:border-blue-200 transition-all duration-300 hover:shadow-lg overflow-hidden">
+              <div className="h-48 overflow-hidden">
+                <img 
+                  src={fleet.image} 
+                  alt={fleet.title}
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                />
+              </div>
               <CardHeader className="text-center">
-                <div className="text-6xl mb-4">{fleet.image}</div>
                 <CardTitle className="text-2xl text-slate-900">{fleet.title}</CardTitle>
                 <p className="text-gray-600">{fleet.description}</p>
               </CardHeader>

@@ -5,8 +5,17 @@ import { Truck, Shield, Clock } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white">
-      <div className="absolute inset-0 bg-black/20"></div>
+    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          alt="Dodge RAM 3500 transportando carros"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-slate-900/70"></div>
+      </div>
+      
       <div className="relative container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           <Badge className="mb-6 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2">

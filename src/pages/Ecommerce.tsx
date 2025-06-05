@@ -86,8 +86,18 @@ const Ecommerce = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 to-blue-900 text-white py-16">
-        <div className="container mx-auto px-6 text-center">
+      <section className="relative bg-gradient-to-br from-slate-900 to-blue-900 text-white py-16 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80"
+            alt="Transporte de carros com Dodge RAM"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-900/75"></div>
+        </div>
+        
+        <div className="relative container mx-auto px-6 text-center">
           <Badge className="mb-4 bg-blue-600 text-white">
             Loja Online ELD
           </Badge>
