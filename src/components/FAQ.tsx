@@ -1,7 +1,9 @@
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const FAQ = () => {
   const faqs = [
@@ -69,9 +71,11 @@ const FAQ = () => {
           <p className="text-gray-600 mb-6">
             Não encontrou sua pergunta? Nossa equipe está pronta para ajudar!
           </p>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
-            Falar com Especialista
-          </Button>
+          <Link to="/contato">
+            <Button className="bg-blue-600 hover:bg-blue-700 text-lg px-8 py-4">
+              Falar com Especialista
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

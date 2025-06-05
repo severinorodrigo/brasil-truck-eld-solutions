@@ -1,8 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Check, Truck, Shield, Clock, Star, Package } from "lucide-react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -169,11 +169,13 @@ const Ecommerce = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className={`w-full ${product.popular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-slate-900 hover:bg-slate-800'}`}
-                  >
-                    Comprar Agora
-                  </Button>
+                  <Link to="/contato">
+                    <Button 
+                      className={`w-full ${product.popular ? 'bg-blue-600 hover:bg-blue-700' : 'bg-slate-900 hover:bg-slate-800'}`}
+                    >
+                      Comprar Agora
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -202,9 +204,11 @@ const Ecommerce = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="text-2xl font-bold text-blue-600 mb-4">{addon.price}</div>
-                  <Button variant="outline" className="w-full">
-                    Adicionar ao Plano
-                  </Button>
+                  <Link to="/contato">
+                    <Button variant="outline" className="w-full">
+                      Adicionar ao Plano
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -223,12 +227,16 @@ const Ecommerce = () => {
             ou tire suas dúvidas antes de comprar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              Falar com Especialista
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
-              Solicitar Demo Gratuita
-            </Button>
+            <Link to="/contato">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                Falar com Especialista
+              </Button>
+            </Link>
+            <Link to="/demo">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+                Solicitar Demo Gratuita
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

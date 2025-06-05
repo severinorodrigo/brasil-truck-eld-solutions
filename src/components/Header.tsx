@@ -39,12 +39,36 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link 
+                    to="/sobre" 
+                    className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
+                      isActive('/sobre') ? 'text-blue-600' : 'text-slate-700'
+                    }`}
+                  >
+                    Sobre
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
                     to="/ecommerce" 
                     className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
                       isActive('/ecommerce') ? 'text-blue-600' : 'text-slate-700'
                     }`}
                   >
                     Loja ELD
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link 
+                    to="/demo" 
+                    className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
+                      isActive('/demo') ? 'text-blue-600' : 'text-slate-700'
+                    }`}
+                  >
+                    Demo
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -65,9 +89,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Falar com Especialista
-            </Button>
+            <Link to="/contato">
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Falar com Especialista
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,6 +119,15 @@ const Header = () => {
                 Início
               </Link>
               <Link 
+                to="/sobre" 
+                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
+                  isActive('/sobre') ? 'text-blue-600' : 'text-slate-700'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sobre
+              </Link>
+              <Link 
                 to="/ecommerce" 
                 className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
                   isActive('/ecommerce') ? 'text-blue-600' : 'text-slate-700'
@@ -100,6 +135,15 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Loja ELD
+              </Link>
+              <Link 
+                to="/demo" 
+                className={`px-3 py-2 text-sm font-medium transition-colors hover:text-blue-600 ${
+                  isActive('/demo') ? 'text-blue-600' : 'text-slate-700'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Demo
               </Link>
               <Link 
                 to="/contato" 
@@ -110,9 +154,11 @@ const Header = () => {
               >
                 Contato
               </Link>
-              <Button className="bg-blue-600 hover:bg-blue-700 mt-2">
-                Falar com Especialista
-              </Button>
+              <Link to="/contato" onClick={() => setIsMenuOpen(false)}>
+                <Button className="bg-blue-600 hover:bg-blue-700 mt-2 w-full">
+                  Falar com Especialista
+                </Button>
+              </Link>
             </nav>
           </div>
         )}

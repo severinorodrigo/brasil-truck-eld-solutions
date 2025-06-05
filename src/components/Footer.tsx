@@ -1,6 +1,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Truck, HeadphonesIcon, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,12 +9,12 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
+            <Link to="/" className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
                 <Truck className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold">ELD Brasil USA</span>
-            </div>
+            </Link>
             <p className="text-gray-400 mb-6 max-w-md">
               Especialistas em soluções ELD para a comunidade brasileira nos Estados Unidos. 
               Compliance, suporte e tecnologia que você pode confiar.
@@ -26,13 +27,13 @@ const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
+            <h3 className="text-lg font-semibold mb-4">Navegação</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Hardware ELD</li>
-              <li>Software Logbook</li>
-              <li>Suporte Técnico</li>
-              <li>Treinamento HOS</li>
-              <li>Compliance Audit</li>
+              <li><Link to="/" className="hover:text-white transition-colors">Início</Link></li>
+              <li><Link to="/sobre" className="hover:text-white transition-colors">Sobre</Link></li>
+              <li><Link to="/ecommerce" className="hover:text-white transition-colors">Loja ELD</Link></li>
+              <li><Link to="/demo" className="hover:text-white transition-colors">Demo</Link></li>
+              <li><Link to="/contato" className="hover:text-white transition-colors">Contato</Link></li>
             </ul>
           </div>
           
